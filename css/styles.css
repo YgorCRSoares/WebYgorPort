@@ -256,7 +256,7 @@ textarea {
   font-weight: 500;
   color: var(--text-color);
   letter-spacing: 1px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   transition: 1s;
 }
 
