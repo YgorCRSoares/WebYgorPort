@@ -156,7 +156,7 @@ textarea {
 /* Changing dot switch color and moving to the right side when checked */
 #switch:checked::before {
   background: #333;
-  left: 32px;
+  left: 23px;
 }
 
 #switch:checked~.container {
