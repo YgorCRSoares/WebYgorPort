@@ -1,4 +1,32 @@
 /* ------------- MEDIA QUERIES -------------- */
+@media (min-width: 268px) {
+  .social-media--hero {
+    padding-top: 15px;
+    flex-direction: row;
+    gap: 0.5em;
+
+    bottom: 2em;
+    left: 0;
+  }
+
+}
+
+@media (min-width: 600px) {
+  .social-media--hero {
+    padding-top: 15px;
+    flex-direction: row;
+    gap: 0.5em;
+    position: unset;
+    bottom: 2em;
+    left: 0;
+  }
+
+  #switch {
+    top: 15px;
+    right: 75px;
+  }
+}
+
 @media (min-width: 768px) {
 
   /* VARIABLES */
@@ -19,6 +47,20 @@
 
   .contact__content {
     flex-direction: row;
+  }
+
+  .social-media--hero {
+    padding-top: 15px;
+    flex-direction: row;
+    gap: 0.5em;
+    position: unset;
+    bottom: 2em;
+    left: 0;
+  }
+
+  #switch {
+    top: 20px;
+    right: 100px;
   }
 }
 
@@ -69,12 +111,34 @@
     font-weight: normal;
     text-decoration: none;
   }
+
+  .social-media--hero {
+    padding-top: 15px;
+    flex-direction: row;
+    gap: 0.5em;
+    position: unset;
+    bottom: 2em;
+    left: 0;
+  }
+
+  #switch {
+    top: 20px;
+    right: 50px;
+  }
 }
 
 @media (min-width: 1024px) {
   :root {
     --title-font-size: 3rem;
   }
+
+  .social-media--hero {
+    flex-direction: row;
+    gap: 0.5em;
+    bottom: 2em;
+    left: 0;
+  }
+
 }
 
 @media (min-width: 1200px) {
@@ -93,7 +157,7 @@
 
   .social-media--hero {
     flex-direction: row;
-    gap: 2em;
+    gap: 0.5em;
   }
 
   .proyects__cards {
