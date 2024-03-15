@@ -352,9 +352,9 @@ textarea {
 }
 
 .social-media--hero {
+  padding-top: 15px;
   flex-direction: row;
   gap: 0.5em;
-  position: absolute;
   bottom: 2em;
   left: 0;
 }
