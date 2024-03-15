@@ -53,6 +53,7 @@ body {
   /* ------------- WHITE MODE ----------------- */
   &.white-mode {
     background-color: var(--bg-color-white);
+    text-shadow: rgba(0, 0, 0, 0.200) 1px 0 10px;
     color: var(--text-color-white);
     transition: 1s;
   }
