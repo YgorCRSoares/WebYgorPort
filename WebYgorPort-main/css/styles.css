@@ -1,0 +1,529 @@
+/* ------------ GOOGLE FONTS ------------ */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/* ------------ VARIABLES ------------ */
+:root {
+
+  /* FONT */
+  --font: 'Poppins', sans-serif;
+
+  /* FONT SIZE */
+  --title-font-size: 2.25rem;
+  --big-font-size: 1.5rem;
+  --middle-font-size: 1.125rem;
+  --normal-font-size: 1rem;
+  --small-font-size: 0.75rem;
+
+  /* COLORS */
+  --bg-color: #000;
+  --bg-color-white: #fafafa;
+  --cards-color-grey: #ececf3;
+  --text-color: #fff;
+  --text-color-white: #555;
+  --second-text-color: #000000;
+  --third-text-color: #ffffff;
+  --main-color: #8ddfff;
+
+  /* ------------ */
+  --height-nav: 3em;
+  --padding-container: 3em 0;
+  --border-bottom: 4px solid var(--main-color);
+}
+
+/* ------------- BASE ----------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 3rem;
+}
+
+body {
+  font-family: var(--font);
+  font-size: var(--normal-font-size);
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  transition: 1s;
+
+  /* ------------- WHITE MODE ----------------- */
+  &.white-mode {
+    background-color: var(--bg-color-white);
+    color: var(--text-color-white);
+    transition: 1s;
+  }
+
+  &.white-mode .linguagens__card {
+    background-color: var(--cards-color-grey);
+    transition: 1s;
+  }
+
+  &.white-mode .hero {
+    background-image: url('../images/white-background.jpg');
+    transition: 1s;
+  }
+
+  &.white-mode .nav {
+    background-color: var(--bg-color-white);
+    transition: 1s;
+  }
+
+  &.white-mode .exp__card-description {
+    color: var(--bg-color-white);
+  }
+
+  &.white-mode .nav__link a,
+  &.white-mode .nav__logo {
+    color: #000;
+    transition: 1s;
+  }
+
+  &.white-mode .nav__logo span {
+    color: var(--main-color);
+    transition: 1s;
+  }
+
+  &.white-mode .contact__socialmedia h2,
+  &.white-mode .hero__content h3,
+  &.white-mode .section__title {
+    color: var(--text-color-white);
+    transition: 1s;
+  }
+}
+
+/* ------------- END WHITE MODE ----------------- */
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+}
+
+img {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+textarea {
+  resize: none;
+}
+
+/* ------------------ Toggle Button ------------------ */
+#switch {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 40px;
+  height: 15px;
+  border-radius: 15px;
+  background-color: #333;
+  position: absolute;
+  top: 15px;
+  right: 55px;
+  transition: all 0.5s ease-in;
+  cursor: pointer;
+  z-index: 1;
+}
+
+/* Making a dot switch inside the Toggle Button */
+#switch::before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--main-color);
+  position: absolute;
+  top: 50%;
+  left: 3px;
+  transform: translateY(-50%);
+  transition: all 0.5s ease-in;
+}
+
+/* Changing toggle button background when checked */
+#switch:checked {
+  background: var(--main-color);
+}
+
+/* Changing dot switch color and moving to the right side when checked */
+#switch:checked::before {
+  background: #333;
+  left: 23px;
+}
+
+#switch:checked~.container {
+  background-color: #333;
+  color: #EEE;
+}
+
+/* ------------------ End Toggle Button ------------------ */
+
+/* --------- REUSABLES CLASSES -------- */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  overflow: hidden;
+  padding: var(--padding-container);
+}
+
+.btn {
+  background-color: var(--main-color);
+  color: var(--second-text-color);
+  font-size: var(--normal-font-size);
+  font-weight: 500;
+  display: inline-block;
+  border: none;
+  padding: .5em 1em;
+  border-radius: .4em;
+  outline: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #7c98e0;
+}
+
+.social-media {
+  display: flex;
+}
+
+.social-media a {
+  font-size: var(--big-font-size);
+  transition: color .3s ease;
+}
+
+.social-media a:hover {
+  color: var(--main-color);
+}
+
+.section__content {
+  text-align: center;
+}
+
+.section__title {
+  display: inline-block;
+  font-size: var(--big-font-size);
+  border-bottom: var(--border-bottom);
+  margin-bottom: 1em;
+}
+
+.section__title--black {
+  color: var(--second-text-color);
+}
+
+.section__title--white {
+  color: var(--third-text-color);
+}
+
+/* ------------- HEADER --------------- */
+.header {
+  width: 100%;
+  height: 100vh;
+}
+
+.nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  height: var(--height-nav);
+  background-color: var(--bg-color);
+  transition: 1s;
+
+}
+
+.nav__content {
+  height: 100%;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: 1s;
+}
+
+.nav__logo {
+  font-size: var(--big-font-size);
+  font-weight: 500;
+  color: var(--text-color);
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  transition: 1s;
+}
+
+.nav__logo span {
+  color: var(--main-color);
+  font-size: 2rem;
+  transition: 1s;
+}
+
+.nav__icon-menu {
+  font-size: var(--big-font-size);
+  cursor: pointer;
+  transition: 1s;
+}
+
+.nav__links {
+  position: absolute;
+  top: -150vh;
+  left: 0;
+  background-color: rgba(255, 255, 255, .8);
+  backdrop-filter: blur(5px);
+
+
+  width: 100%;
+  height: 100vh;
+  padding-top: 4em;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  transition: .8s ease;
+
+}
+
+.nav__link {
+  margin-bottom: 2em;
+  transition: 1s;
+}
+
+.nav__link a {
+  font-size: var(--middle-font-size);
+  font-weight: 500;
+  color: var(--second-text-color);
+  text-decoration: underline;
+  transition: 1s;
+}
+
+.nav.active .nav__links {
+  top: var(--height-nav);
+}
+
+.switch {
+  cursor: pointer;
+  align-items: flex-start;
+}
+
+/* ------------- HERO ----------------- */
+.hero {
+  width: 100%;
+  height: 100vh;
+  background-image: url('../images/background.jpg');
+  transition: 1s;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero__content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  position: relative;
+}
+
+.hero__content h3 {
+  font-size: var(--middle-font-size);
+}
+
+.hero__title {
+  font-size: var(--title-font-size);
+  margin: .2em 0 .5em;
+}
+
+.hero__title span {
+  color: var(--main-color);
+}
+
+.hero__content p {
+  max-width: 80%;
+  margin-bottom: 2em;
+}
+
+.social-media--hero {
+  flex-direction: column;
+  position: absolute;
+  bottom: 2em;
+  left: 0;
+}
+
+/* ------------- linguagens ------------- */
+.linguagens {
+  background-color: var(--second-bg-color);
+}
+
+.linguagens__cards {
+  margin: 1em 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  align-items: center;
+  gap: 2rem;
+}
+
+.linguagens__card {
+  background-color: var(--bg-color);
+  padding: 1.5em;
+  border-radius: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.linguagens__card-icon {
+  font-size: var(--big-font-size);
+  color: var(--main-color);
+}
+
+.linguagens__card-title {
+  font-size: var(--middle-font-size);
+  margin: 1em 0;
+}
+
+.linguagens__card-description {
+  text-align: center;
+}
+
+/* ------------- ABOUT ---------------- */
+.about__text {
+  text-align: center;
+  margin-bottom: 1.5em;
+}
+
+/* ------------- exp ------------- */
+.exp {
+  background-color: var(--second-bg-color);
+
+}
+
+.exp__cards {
+  margin: 1em 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  align-items: center;
+  gap: 1em;
+}
+
+.exp__card {
+  border-radius: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+
+.exp__card-info {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, .8);
+  backdrop-filter: blur(2px);
+  width: 100%;
+  height: 100%;
+  padding: 0 1em;
+
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.exp__card:hover .exp__card-info {
+  display: flow-root;
+  overflow: hidden;
+}
+
+.exp__card-title {
+  font-size: var(--middle-font-size);
+  margin-bottom: .5em;
+}
+
+.exp__card-description {
+  text-align: center;
+  animation: scrollText 25s linear infinite;
+  /* Animar o texto */
+}
+
+/* ------------- SCROLL TEXT CARDS -------------- */
+@keyframes scrollText {
+  from {
+    transform: translateY(0);
+    /* Posição inicial */
+  }
+
+  to {
+    transform: translateY(-100%);
+    /* Rola até o topo */
+  }
+}
+
+/* ------------- END SCROLL TEXT CARDS -------------- */
+
+/* ------------- CONTACT -------------- */
+.contact__content {
+  display: flex;
+  flex-direction: column;
+  gap: 4em;
+}
+
+.contact__socialmedia h2 {
+  font-size: var(--big-font-size);
+  color: var(--third-text-color)
+}
+
+.contact__socialmedia p {
+  margin: .5em 0 1em;
+}
+
+.social-media--contact {
+  gap: 2em;
+}
+
+.contact__form p {
+  font-size: var(--middle-font-size);
+  margin-bottom: 1em;
+  font-weight: 500;
+}
+
+.form__input,
+.form textarea {
+  width: 100%;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-radius: .5em;
+  border: none;
+  outline: none;
+  font-size: var(--normal-font-size);
+  background-color: #333333;
+  color: var(--text-color);
+}
+
+.form__btn {
+  display: block;
+  margin: 0 auto;
+  font-size: var(--middle-font-size);
+}
+
+/* ------------- FOOTER ---------------- */
+.footer {
+  padding: 1em 0;
+}
+
+.footer p {
+  font-size: var(--small-font-size);
+  text-align: center;
+}

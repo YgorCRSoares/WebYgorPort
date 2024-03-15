@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ygor Soares | Frontend</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <!-- ICONES CDN FONTAWESOME -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+</head>
+<body>
+  <!------------------ HEADER -------------------->
+    <header class="header" id="header">
+      
+      <nav class="nav">
+        <div class="nav__content container">
+          <a href="#" class="nav__logo">Ygor<span>.</span></a>
+          
+        
+          <ul class="nav__links">
+            <li class="nav__link"><a href="#header">Home</a></li>
+            <li class="nav__link"><a href="#linguagens">Linguagens</a></li>
+            <li class="nav__link"><a href="#about">Sobre mim</a></li>
+            <li class="nav__link"><a href="#exp">Experiências  </a></li>
+            <li class="nav__link"><a href="#contact">Contatos</a></li>
+          </ul>
+
+<!------------------ White Mode toggle -------------------->
+
+          <label for="switch">
+            <input type="checkbox" class="switch" id="switch" placeholder="dark">
+          </label>
+
+<!------------------ End White Mode toggle -------------------->
+
+          <div class="nav__icon-menu"><i class="fa-solid fa-bars"></i></div>
+        </div>
+      </nav>
+
+
+      <!-- HERO -->
+      <section class="hero" id="hero">
+        <div class="hero__content container">
+          <h3>Olá!👋 eu sou o Ygor.</h3>
+          <h1 class="hero__title">Um Dev <span>Frontend</span></h1>
+          <p>Criei esta página para treinar minhas habilidades como dev Frontend!</p>
+          <p>Como ainda estou no aprendizado no mundo da tecnologia, aqui em baixo vou deixar minhas experiências empresariais mais relevantes e as linguagens que ainda estou treinando e aprendendo todos os dias!</p>
+          <a href="#exp" class="hero__btn btn">Experiências</a>
+
+          <div class="social-media social-media--hero">
+            <div class="social-media__icon">
+              <a href="https://www.instagram.com/ygor_cezar/"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <div class="social-media__icon">
+              <a href="https://www.linkedin.com/in/ygor-soares/"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+            <div class="social-media__icon">
+              <a href="https://github.com/YgorCRSoares"><i class="fa-brands fa-github"></i></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </header>
+    
+  <!------------------ MAIN ---------------------->
+    <main class="main">
+
+      <!-- linguagens -->
+      <section class="linguagens" id="linguagens">
+        <div class="section__content container">
+          <h2 class="section__title section__title--black">Minhas linguagens</h2>
+
+          <div class="linguagens__cards">
+            <div class="linguagens__card">
+              <i class="linguagens__card-icon fa-solid fa-code"></i>
+              <h3 class="linguagens__card-title">Desenvolvimento Web</h3>
+              <p class="linguagens__card-description">HTML utilizando o JavaScript com Node.js, TypeScript, SQL e um pouco de Python</p>
+            </div>
+
+            <div class="linguagens__card">
+              <i class="linguagens__card-icon fa-solid fa-pen-nib"></i>
+              <h3 class="linguagens__card-title">UI/UX Design</h3>
+              <p class="linguagens__card-description">Estilização com CSS, <br>Bootstrap, <br>React.<br></p>
+            </div>
+
+            <div class="linguagens__card">
+              <i class="linguagens__card-icon fa-solid fa-mobile"></i>
+              <h3 class="linguagens__card-title">Mobile Development</h3>
+              <p class="linguagens__card-description">React Native, <br>Flutter.<br><br></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT ----->
+      <section class="about" id="about">
+        <div class="section__content container">
+          <h2 class="section__title">Sobre mim</h2>
+          <p class="about__text">Um amante da T.I, criado desde os 4 anos na frente do computador e um eterno aprendiz no mundo da tecnologia!</p>
+          
+          <p class="about__text">Atuei como Help Desk na empresa Master Brasil realizando suporte completo aos clientes internos, auxiliando nas
+          atualizações de infraestrutura de TI e outras atividades na empresa. Foi lá que conheci a programação através do C# utilizando o Visual Basic e, depois disso, minha paixão só aumentou!</p>
+          
+          <p class="about__text">Extrovertido e comunicativo (por mais difícil que seja um programador assim), atualmente na área de vendas da Stone e estudando mais a fundo o mundo da programação e
+          desenvolvimento para retornar à área da programação que é a minha paixão!</p>
+          <a href="#contact" class="about__btn btn">Bora conversar melhor?</a>
+        </div>
+      </section>
+
+      <!-- EXPERIENCES -->
+      <section class="exp" id="exp">
+        <div class="section__content container">
+          <h2 class="section__title section__title--white">Experiências empresariais recentes</h2>
+
+          <div class="exp__cards">
+            <div class="exp__card">
+              <img src="images/Stone.jpg" alt="image of proyect" class="exp__card-img">
+              <div class="exp__card-info">
+                <h3 class="exp__card-title" hidden>Stone</h3>
+                <p class="exp__card-description"><br><br>STONE Pagamentos S.A. - <br> Business Analyst
+                  <br><br>
+                  Responsável pelo atendimento de pós-venda, independentemente do produto Stone, através do canal de chat (Chat App,
+                WhatsApp) e por CRM.
+                <br><br>
+                Em Julho (01/07/2023), fui promovido à Analista Pleno (N2) por conta do meu desempenho exemplar e fui um dos poucos da
+                turma a ter sido promovido em tão pouco tempo.
+                <br><br>
+                Atualçmente trabalhando na parte comercial da Stone, realizando a venda de novos produtos aos clientes.</p>
+              </div>
+            </div>
+
+            <div class="exp__card">
+              <img src="images/Vincci.jpg" alt="image of proyect" class="exp__card-img">
+              <div class="exp__card-info">
+                <h3 class="exp__card-title" hidden>Vincci</h3>
+                <p class="exp__card-description"><br><br>Vincci - <br>I.T Manager<br>Strategic Planning Specialist.
+                <br><br>
+                Atuei como responsável pelo T.I da empresa onde realizei a criação do site de apresentação para os clientes via ferramenta online
+                <br><br> 
+                Realizava manutenções em Hardwares e computadores; Reconfiguração/Instalação de sistema operacional
+                <br><br>
+                Instalação de aplicativos utilizados pela empresa; Passagem de cabos de rede; Dentre outras atividades da T.I
+                <br><br>
+                Responsável também pelo controle do Mailing; Elaboração de relatórios operacionais via Excel e/ou Google Sheets
+                <br><br>
+                Gestão na plataforma de CRM ActiveCampaign; Elaboração de Campanhas para a equipe comercial; dentre outras atividades
+              </div>
+            </div>
+
+            <div class="exp__card">
+              <img src="images/MasterBrasil.jpg" alt="image of proyect" class="exp__card-img">
+              <div class="exp__card-info">
+                <h3 class="exp__card-title" hidden>MasterBrasil</h3>
+                <p class="exp__card-description">
+                  <br><br>
+                  Master Brasil - <br>
+                  I.T Help Desk
+                  <br><br>
+                  Realizei o gerenciamento eficiente da infraestrutura de TI, incluindo administração de servidores, redes e impressoras, assegurando conformidade com políticas de segurança.
+                <br><br>
+                Fiz contribuições vitais na implementação de atualizações essenciais para o funcionamento da telefonia.
+                <br><br>
+                Fui reconhecido por entregas ágeis, cumprindo SLAs desafiadores, e eficiência notável no suporte interno à operações da empresa.
+                <br><br>
+                Nos momentos onde a operação estava mais tranquila, tirava um tempo para programar em C# no Visual Basic e fazer algumas
+                ferramentas para ajudar o time, onde consegui aumentar a produtividade criando um aplicativo de atalhos rápidos, que
+                organizava os principais aplicativos em um só lugar.</p>
+              </div>
+            </div>
+<!---------------------------- Cards não usados  ---------------------------->
+            <!-- <div class="exp__card">
+              <img src="images/Stone.jpg" alt="image of proyect" class="exp__card-img">
+              <div class="exp__card-info">
+                <h3 class="exp__card-title">Proyect 4</h3>
+                <p class="exp__card-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+              </div>
+            </div>
+
+            <div class="exp__card">
+              <img src="images/Vincci.jpg" alt="image of proyect" class="exp__card-img">
+              <div class="exp__card-info">
+                <h3 class="exp__card-title">Proyect 5</h3>
+                <p class="exp__card-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+              </div>
+            </div>
+
+            <div class="exp__card">
+              <img src="images/MasterBrasil.jpg" alt="image of proyect" class="exp__card-img">
+              <div class="exp__card-info">
+                <h3 class="exp__card-title">Proyect 6</h3>
+                <p class="exp__card-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+              </div>
+            </div> -->
+<!---------------------------- Cards não usados  ---------------------------->
+          </div>
+        </div>
+      </section>
+      <!-- CONTACT -->
+      <section class="contact" id="contact">
+        <div class="contact__content container">
+
+          <div class="contact__socialmedia">
+            <h2>Me adiciona aí!</h2>
+            <p>Seja pra receber novas propostas, <br>dicas de como melhorar ou só pra bater um papo,<br> minhas redes estão aqui em baixo, só me chamar! 😁.</p>
+            <div class="social-media social-media--contact">
+              <div class="social-media__icon">
+                <a href="https://www.instagram.com/ygor_cezar/"><i class="fa-brands fa-instagram"></i></a>
+              </div>
+              <div class="social-media__icon">
+                <a href="https://www.linkedin.com/in/ygor-soares/"><i class="fa-brands fa-linkedin"></i></a>
+              </div>
+              <div class="social-media__icon">
+                <a href="https://github.com/YgorCRSoares"><i class="fa-brands fa-github"></i></a>
+              </div>
+            </div>
+        </div>
+      </section>
+
+    </main>
+
+  <!------------------ FOOTER ----------------->
+  <footer class="footer container">
+    <p>Developed with ♥ by Dev Mode & modifyed by Ygor Soares ©</p>
+  </footer>
+
+  <!-- JS -->
+  <script src="js/main.js"></script>
+  <script>
+    const $html = document.querySelector('body');
+    const $checkbox = document.querySelector('#switch');
+
+      $checkbox.addEventListener('change', function () {
+        $html.classList.toggle('white-mode');
+      })
+  </script>
+</body>
+</html>
