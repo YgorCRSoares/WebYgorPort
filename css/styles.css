@@ -216,10 +216,6 @@ textarea {
   margin-bottom: 1em;
 }
 
-.section__title--black {
-  color: var(--second-text-color);
-}
-
 .section__title--white {
   color: var(--third-text-color);
 }
