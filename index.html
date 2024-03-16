@@ -247,29 +247,42 @@
     // <!-- on click description stop -->
 document.addEventListener("DOMContentLoaded", function() {
   document.querySelectorAll(".exp__card-description").forEach(function(card) {
-    let animationTime, touchStarted = false;
+    let animationTime;
+    let touchStarted = false;
 
-    const handleEvent = (event, isTouch) => {
-      if (!isTouch) {
+    card.addEventListener("mousedown", function(event) {
+      if (!isTouchEvent(event)) {
         animationTime = parseFloat(getComputedStyle(card).animationDuration) * parseFloat(getComputedStyle(card).animationIterationCount);
         card.style.animationPlayState = "paused";
-      } else if (touchStarted) {
+      }
+    });
+
+    card.addEventListener("mouseup", function(event) {
+      if (!isTouchEvent(event)) {
         card.style.animation = `scrollText 25s linear infinite ${-animationTime}s`;
         card.style.animationPlayState = "running";
-        touchStarted = false;
-        event.preventDefault();
       }
-    };
+    });
 
-    card.addEventListener("mousedown", event => handleEvent(event, false));
-    card.addEventListener("mouseup", event => handleEvent(event, false));
-    card.addEventListener("touchstart", event => {
+    card.addEventListener("touchstart", function(event) {
       touchStarted = true;
       animationTime = parseFloat(getComputedStyle(card).animationDuration) * parseFloat(getComputedStyle(card).animationIterationCount);
       card.style.animationPlayState = "paused";
       event.preventDefault();
     });
-    card.addEventListener("touchend", event => handleEvent(event, true));
+
+    card.addEventListener("touchend", function(event) {
+      if (touchStarted) {
+        card.style.animation = `scrollText 25s linear infinite ${-animationTime}s`;
+        card.style.animationPlayState = "running";
+        touchStarted = false;
+        event.preventDefault();
+      }
+    });
+
+    function isTouchEvent(event) {
+      return event.type.startsWith("touch");
+    }
   });
 });
 
