@@ -245,31 +245,17 @@
       })
 
     // <!-- on click description stop -->
-  document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll(".exp__card-description").forEach(function (card) {
-      let paused = false, time;
-      card.addEventListener("click", function () {
-        if (!paused) {
-          time = getAnimationTime(card);
-          card.style.animationPlayState = "paused";
-          paused = true;
-        } else {
-          card.style.animation = `scrollText 25s linear infinite ${-time}s`;
-          card.style.animationPlayState = "running";
-          paused = false;
-        }
+      let animationTime;
+      card.addEventListener("mousedown", function () {
+        animationTime = parseFloat(getComputedStyle(card).animationDuration) * parseFloat(getComputedStyle(card).animationIterationCount);
+        card.style.animationPlayState = "paused";
       });
-      card.addEventListener("mouseleave", function () {
-        if (paused) {
-          card.style.animation = "scrollText 25s linear infinite";
-          card.style.animationPlayState = "running";
-          paused = false;
-        }
+      card.addEventListener("mouseup", function () {
+        card.style.animation = `scrollText 25s linear infinite ${-animationTime}s`;
+        card.style.animationPlayState = "running";
       });
-      function getAnimationTime(element) {
-        const { animationDuration, animationDelay, animationIterationCount } = getComputedStyle(element);
-        return (parseFloat(animationDuration) + parseFloat(animationDelay)) * parseFloat(animationIterationCount || 1);
-      }
     });
   });
 
