@@ -7,17 +7,19 @@
   }
 
   .hero__content p {
-    max-width: 70%;
-    margin-bottom: 2em;
+    max-width: 60%;
+    margin-bottom: 1em;
+    font-size: 11px;
   }
 
   .hero__title {
     /* font-size: 20px; */
-    margin: 0.1em 0 0.2em;
+    margin: 0.1em 0 0.1em;
   }
 
   .hero__content h3 {
     font-size: var(--big-font-size);
+    padding-top: 14px;
   }
 }
 
@@ -35,6 +37,12 @@
   .hero__content h3 {
     padding-top: 10px;
   }
+
+  .hero__content p {
+    max-width: 80%;
+    margin-bottom: 1em;
+    font-size: 13px;
+  }
 }
 
 @media (min-height:500px) {
@@ -45,6 +53,12 @@
 
   .hero__content h3 {
     padding-top: 10px;
+  }
+
+  .hero__content p {
+    max-width: 60%;
+    margin-bottom: 1em;
+    font-size: 12px;
   }
 }
 
@@ -164,7 +178,7 @@
   }
 
   .hero__content p {
-    max-width: 50%;
+    max-width: 60%;
   }
 
   .contact__content {
