@@ -247,42 +247,29 @@
     // <!-- on click description stop -->
 document.addEventListener("DOMContentLoaded", function() {
   document.querySelectorAll(".exp__card-description").forEach(function(card) {
-    let animationTime;
-    let touchStarted = false;
+    let animationTime, touchStarted = false;
 
-    card.addEventListener("mousedown", function(event) {
-      if (!isTouchEvent(event)) {
+    const handleEvent = (event, isTouch) => {
+      if (!isTouch) {
         animationTime = parseFloat(getComputedStyle(card).animationDuration) * parseFloat(getComputedStyle(card).animationIterationCount);
         card.style.animationPlayState = "paused";
-      }
-    });
-
-    card.addEventListener("mouseup", function(event) {
-      if (!isTouchEvent(event)) {
-        card.style.animation = `scrollText 25s linear infinite ${-animationTime}s`;
-        card.style.animationPlayState = "running";
-      }
-    });
-
-    card.addEventListener("touchstart", function(event) {
-      touchStarted = true;
-      animationTime = parseFloat(getComputedStyle(card).animationDuration) * parseFloat(getComputedStyle(card).animationIterationCount);
-      card.style.animationPlayState = "paused";
-      event.preventDefault();
-    });
-
-    card.addEventListener("touchend", function(event) {
-      if (touchStarted) {
+      } else if (touchStarted) {
         card.style.animation = `scrollText 25s linear infinite ${-animationTime}s`;
         card.style.animationPlayState = "running";
         touchStarted = false;
         event.preventDefault();
       }
-    });
+    };
 
-    function isTouchEvent(event) {
-      return event.type.startsWith("touch");
-    }
+    card.addEventListener("mousedown", event => handleEvent(event, false));
+    card.addEventListener("mouseup", event => handleEvent(event, false));
+    card.addEventListener("touchstart", event => {
+      touchStarted = true;
+      animationTime = parseFloat(getComputedStyle(card).animationDuration) * parseFloat(getComputedStyle(card).animationIterationCount);
+      card.style.animationPlayState = "paused";
+      event.preventDefault();
+    });
+    card.addEventListener("touchend", event => handleEvent(event, true));
   });
 });
 
