@@ -73,10 +73,11 @@ body {
     transition: 1s;
   }
 
-  &.white-mode .exp__card-description {
+  &.white-mode .exp__card-description,
+  &.white-mode .port__card-description {
     color: var(--bg-color-white);
   }
-
+ 
   &.white-mode .nav__link a,
   &.white-mode .nav__logo {
     color: #000;
