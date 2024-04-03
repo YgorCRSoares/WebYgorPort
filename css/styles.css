@@ -4,9 +4,9 @@
 /* ------------ VARIABLES ------------ */
 :root {
 
-    /* Better Font Rendering */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  /* Better Font Rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 
   /* FONT */
   --font: 'Poppins', sans-serif;
@@ -62,7 +62,7 @@ body {
     transition: 1s;
   }
 
-  &.white-mode .linguagens__card {
+  &.white-mode .linguagens__card{
     background-color: var(--cards-color-grey);
     transition: 1s;
   }
@@ -426,7 +426,7 @@ textarea {
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  cursor: pointer;
+  cursor:default;
   position: relative;
 }
 
@@ -499,7 +499,7 @@ textarea {
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  cursor: pointer;
+  cursor: default;
   position: relative;
 }
 
