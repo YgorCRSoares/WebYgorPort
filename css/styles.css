@@ -23,7 +23,7 @@
 }
 
 * {
-	/* margin: 0; */
+	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
@@ -37,6 +37,7 @@ body {
 	font-family: var(--font);
 	font-size: var(--normal-font-size);
 	text-shadow: rgba(255, 255, 255, 0.313) 1px 0 10px;
+  line-height: 4VH;
 	color: var(--text-color);
 	background-color: var(--bg-color);
 	transition: 1s;
@@ -49,9 +50,11 @@ body {
 	}
 
 	&.white-mode .linguagens__card {
-		background-color: var(--cards-color-grey);
+		background: linear-gradient(45deg, #4d4d4d05 0%, #11426309 50%, #ffffff0b 100%);
+    background: -moz-linear-gradient(45deg, #4d4d4d05 0%, #11426309#ffffff0b #ffffff0b);
+    background: -webkit-linear-gradient(45deg, #4d4d4d05 0%, #11426309 50%, #ffffff0b 100%);
 		transition: 1s;
-	}
+  }
 
 	&.white-mode .hero {
 		background-image: url('../images/white-background.jpg');
@@ -252,7 +255,7 @@ textarea {
 
 .nav__links {
 	position: absolute;
-	top: -50vh;
+	top: -60vh;
 	right: 0;
 	background-color: rgba(255, 255, 255, .8);
 	backdrop-filter: blur(10px);
@@ -303,6 +306,7 @@ textarea {
 	justify-content: center;
 	align-items: start;
 	position: relative;
+  gap: 15px;
 }
 
 .hero__content h3 {
@@ -344,7 +348,9 @@ textarea {
 }
 
 .linguagens__card {
-	background-color: var(--bg-color);
+	background: linear-gradient(45deg, #4d4d4d2b 0%,#11426309 50%, #ffffff1d 100%);
+  background: -moz-linear-gradient(45deg, #4d4d4d2b 0%, #11426309 50%, #ffffff1d 100%);
+  background: -webkit-linear-gradient(45deg, #4d4d4d2b 0%, #11426309 50%, #ffffff1d 100%);
 	padding: 1.5em;
 	border-radius: 1em;
 	display: flex;
