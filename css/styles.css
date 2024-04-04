@@ -37,7 +37,6 @@ body {
 	font-family: var(--font);
 	font-size: var(--normal-font-size);
 	text-shadow: rgba(255, 255, 255, 0.313) 1px 0 10px;
-  line-height: 4VH;
 	color: var(--text-color);
 	background-color: var(--bg-color);
 	transition: 1s;
@@ -307,6 +306,7 @@ textarea {
 	align-items: start;
 	position: relative;
   gap: 15px;
+  line-height: 4VH;
 }
 
 .hero__content h3 {
