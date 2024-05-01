@@ -19,7 +19,6 @@ navLinks.forEach(link => {
     nav.classList.remove('active');
   })
 })
-
 // <!-- on click description stop -->
 document.addEventListener("DOMContentLoaded", function() {
   document.querySelectorAll(".exp__card-description, .port__card-description").forEach(function(card) {
