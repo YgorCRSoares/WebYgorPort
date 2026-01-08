@@ -1,269 +1,442 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ygor Soares | Frontend</title>
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/responsive.css">
-
-  <!-- ICONES CDN FONTAWESOME -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
-  <!-- Vercel Viewers-->
-  <script>
-    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-  </script>
-  <script defer src="/_vercel/insights/script.js"></script>
-</head>
-<body>
-  <!------------------ HEADER -------------------->
-    <header class="header" id="header">
-      
-      <nav class="nav">
-        <div class="nav__content container">
-          <a href="#" class="nav__logo">Ygor<span>.</span></a>
-          
-        
-          <ul class="nav__links">
-            <li class="nav__link"><a href="#header">Home</a></li>
-            <li class="nav__link"><a href="#linguagens">Linguagens</a></li>
-            <li class="nav__link"><a href="#about">Sobre mim</a></li>
-            <li class="nav__link"><a href="#exp">Experiências  </a></li>
-            <li class="nav__link"><a href="#contact">Contatos</a></li>
-          </ul>
-
-<!------------------ White Mode toggle -------------------->
-
-          <label for="switch">
-            <input type="checkbox" class="switch" id="switch" placeholder="dark">
-          </label>
-
-<!------------------ End White Mode toggle -------------------->
-
-          <div class="nav__icon-menu"><i class="fa-solid fa-bars"></i></div>
-        </div>
-      </nav>
-
-
-      <!-- HERO -->
-      <section class="hero" id="hero">
-        <div class="hero__content container">
-          <h3>Olá!👋 eu sou o Ygor.</h3>
-          <h1 class="hero__title">Um Dev <span>Frontend</span></h1>
-          <p>Criei esta página para treinar minhas habilidades como dev Frontend!</p>
-          <p>Como ainda estou no aprendizado no mundo da tecnologia, aqui em baixo vou deixar minhas experiências empresariais mais relevantes e as linguagens que ainda estou treinando e aprendendo todos os dias!</p>
-          <a href="#exp" class="hero__btn btn">Experiências</a>
-
-          <div class="social-media social-media--hero">
-            <div class="social-media__icon">
-              <a href="https://www.instagram.com/ygor_cezar/"><i class="fa-brands fa-instagram"></i></a>
-            </div>
-            <div class="social-media__icon">
-              <a href="https://www.linkedin.com/in/ygor-soares/"><i class="fa-brands fa-linkedin"></i></a>
-            </div>
-            <div class="social-media__icon">
-              <a href="https://github.com/YgorCRSoares"><i class="fa-brands fa-github"></i></a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-    </header>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ygor Soares | Solutions Analyst & Senior Developer</title>
     
-  <!------------------ MAIN ---------------------->
-    <main class="main">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-      <!-- linguagens -->
-      <section class="linguagens" id="linguagens">
-        <div class="section__content container">
-          <h2 class="section__title section__title--black">Minhas linguagens</h2>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+</head>
+<body class="bg-light-bg text-light-text dark:bg-dark-bg dark:text-dark-text transition-colors duration-500 overflow-x-hidden relative font-sans">
 
-          <div class="linguagens__cards">
-            <div class="linguagens__card">
-              <i class="linguagens__card-icon fa-solid fa-code"></i>
-              <h3 class="linguagens__card-title">Desenvolvimento Web</h3>
-              <p class="linguagens__card-description">JavaScript<br>Node.js<br>TypeScript<br>SQL<br>Python (Iniciante)</p>
+    <!-- Background Decoration -->
+    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+        <div class="absolute top-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl opacity-20 animate-float dark:opacity-30"></div>
+        <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-stone/10 rounded-full blur-3xl opacity-20 animate-float dark:opacity-30" style="animation-delay: 2s;"></div>
+    </div>
+
+    <!-- HEADER & NAV -->
+    <header class="fixed w-full top-0 z-50 glass-nav transition-all duration-300" id="header-nav">
+        <div class="container mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="text-2xl font-bold tracking-tighter group">
+                Ygor<span class="text-primary group-hover:text-stone transition-colors">.</span>
+            </a>
+
+            <nav class="hidden md:block">
+                <ul class="flex items-center space-x-8 text-sm font-medium">
+                    <li><a href="#hero" class="hover:text-primary transition-colors">Home</a></li>
+                    <li><a href="#competencias" class="hover:text-primary transition-colors">Competências</a></li>
+                    <li><a href="#about" class="hover:text-primary transition-colors">Perfil</a></li>
+                    <li><a href="#exp" class="hover:text-primary transition-colors">Trajetória</a></li>
+                    <li><a href="#port" class="hover:text-primary transition-colors">Projetos</a></li>
+                    <li><a href="#contact" class="hover:text-primary transition-colors">Contato</a></li>
+                </ul>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-slate-700 transition-colors" aria-label="Alternar Tema">
+                    <i class="fas fa-moon dark:hidden text-slate-700"></i>
+                    <i class="fas fa-sun hidden dark:block text-yellow-400"></i>
+                </button>
+                <button id="mobile-menu-btn" class="md:hidden text-2xl focus:outline-none"><i class="fas fa-bars"></i></button>
             </div>
-
-            <div class="linguagens__card">
-              <i class="linguagens__card-icon fa-solid fa-pen-nib"></i>
-              <h3 class="linguagens__card-title">UI/UX Design</h3>
-              <p class="linguagens__card-description">CSS<br>Bootstrap<br>React<br><br><br></p>
-            </div>
-
-            <div class="linguagens__card">
-              <i class="linguagens__card-icon fa-solid fa-mobile"></i>
-              <h3 class="linguagens__card-title">Mobile Development</h3>
-              <p class="linguagens__card-description">React Native<br>Flutter<br><br><br></p>
-            </div>
-          </div>
         </div>
-      </section>
 
-      <!-- ABOUT ----->
-      <section class="about" id="about">
-        <div class="section__content container">
-          <h2 class="section__title">Sobre mim</h2>
-          <p class="about__text">Um amante da T.I, criado desde os 4 anos na frente do computador e um eterno aprendiz no mundo da tecnologia!</p>
-          
-          <p class="about__text">Atuei como Help Desk na empresa Master Brasil realizando suporte completo aos clientes internos, auxiliando nas
-          atualizações de infraestrutura de TI e outras atividades na empresa. Foi lá que conheci a programação através do C# utilizando o Visual Basic e, depois disso, minha paixão só aumentou!</p>
-          
-          <p class="about__text">Extrovertido e comunicativo (por mais difícil que seja um programador assim), atualmente na área de vendas da Stone e estudando mais a fundo o mundo da programação e
-          desenvolvimento para retornar à área da programação que é a minha paixão!</p>
-          <a href="#contact" class="about__btn btn">Bora conversar melhor?</a>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-20 left-0 w-full bg-light-bg dark:bg-dark-bg border-b border-gray-200 dark:border-slate-800 shadow-xl">
+            <ul class="flex flex-col p-6 space-y-4 font-medium text-center text-sm">
+                <li><a href="#hero" class="block py-3 hover:bg-primary/10 rounded-lg mobile-link">Home</a></li>
+                <li><a href="#competencias" class="block py-3 hover:bg-primary/10 rounded-lg mobile-link">Competências</a></li>
+                <li><a href="#about" class="block py-3 hover:bg-primary/10 rounded-lg mobile-link">Perfil</a></li>
+                <li><a href="#exp" class="block py-3 hover:bg-primary/10 rounded-lg mobile-link">Trajetória</a></li>
+                <li><a href="#port" class="block py-3 hover:bg-primary/10 rounded-lg mobile-link">Projetos</a></li>
+                <li><a href="#contact" class="block py-3 hover:bg-primary/10 rounded-lg mobile-link">Contato</a></li>
+            </ul>
         </div>
-      </section>
+    </header>
 
-      <!-- EXPERIENCES -->
-      <section class="exp" id="exp">
-        <div class="section__content container">
-          <h2 class="section__title section__title--white">Experiências empresariais recentes</h2>
-
-          <div class="exp__cards">
-            <div class="exp__card">
-              <img src="images/Stone.jpg" alt="image of proyect" class="exp__card-img">
-              <div class="exp__card-info">
-                <h3 class="exp__card-title" hidden>Stone</h3>
-                <p class="exp__card-description"><br><br>STONE Pagamentos S.A. - <br> Business Analyst
-                  <br><br>
-                  Responsável pelo atendimento de pós-venda, independentemente do produto Stone, através do canal de chat (Chat App,
-                WhatsApp) e por CRM.
-                <br><br>
-                Em Julho (01/07/2023), fui promovido à Analista Pleno (N2) por conta do meu desempenho exemplar e fui um dos poucos da
-                turma a ter sido promovido em tão pouco tempo.
-                <br><br>
-                Atualmente trabalhando na parte comercial da Stone, realizando a venda de novos produtos aos clientes.</p>
-              </div>
-            </div>
-
-            <div class="exp__card">
-              <img src="images/Vincci.jpg" alt="image of proyect" class="exp__card-img">
-              <div class="exp__card-info">
-                <h3 class="exp__card-title" hidden>Vincci</h3>
-                <p class="exp__card-description"><br><br>Vincci - <br>I.T Manager<br>Strategic Planning Specialist.
-                <br><br>
-                Atuei como responsável pelo T.I da empresa onde realizei a criação do site de apresentação para os clientes via ferramenta online
-                <br><br> 
-                Realizava manutenções em Hardwares e computadores; Reconfiguração/Instalação de sistema operacional
-                <br><br>
-                Instalação de aplicativos utilizados pela empresa; Passagem de cabos de rede; Dentre outras atividades da T.I
-                <br><br>
-                Responsável também pelo controle do Mailing; Elaboração de relatórios operacionais via Excel e/ou Google Sheets
-                <br><br>
-                Gestão na plataforma de CRM ActiveCampaign; Elaboração de Campanhas para a equipe comercial; dentre outras atividades.
-              </div>
-            </div>
-
-            <div class="exp__card">
-              <img src="images/MasterBrasil.jpg" alt="image of proyect" class="exp__card-img">
-              <div class="exp__card-info">
-                <h3 class="exp__card-title" hidden>MasterBrasil</h3>
-                <p class="exp__card-description">
-                  <br><br>
-                  Master Brasil - <br>
-                  I.T Help Desk
-                  <br><br>
-                  Realizei o gerenciamento eficiente da infraestrutura de TI, incluindo administração de servidores, redes e impressoras, assegurando conformidade com políticas de segurança.
-                <br><br>
-                Fiz contribuições vitais na implementação de atualizações essenciais para o funcionamento da telefonia.
-                <br><br>
-                Fui reconhecido por entregas ágeis, cumprindo SLAs desafiadores e eficiência notável no suporte interno à operações da empresa.
-                <br><br>
-                Nos momentos onde a operação estava mais tranquila, tirava um tempo para programar em C# no Visual Basic e fazer algumas
-                ferramentas para ajudar o time, onde consegui aumentar a produtividade criando um aplicativo de atalhos rápidos, que
-                organizava os principais aplicativos em um só lugar.</p>
-              </div>
-            </div>
-<!---------------------------- Cards não usados  ---------------------------->
-            <!-- <div class="exp__card">
-              <img src="images/Stone.jpg" alt="image of proyect" class="exp__card-img">
-              <div class="exp__card-info">
-                <h3 class="exp__card-title">Proyect 4</h3>
-                <p class="exp__card-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-              </div>
-            </div>
-
-            <div class="exp__card">
-              <img src="images/Vincci.jpg" alt="image of proyect" class="exp__card-img">
-              <div class="exp__card-info">
-                <h3 class="exp__card-title">Proyect 5</h3>
-                <p class="exp__card-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-              </div>
-            </div>
-
-            <div class="exp__card">
-              <img src="images/MasterBrasil.jpg" alt="image of proyect" class="exp__card-img">
-              <div class="exp__card-info">
-                <h3 class="exp__card-title">Proyect 6</h3>
-                <p class="exp__card-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-              </div>
-            </div> -->
-<!---------------------------- Cards não usados  ---------------------------->
-          </div>
-        </div>
-      </section>
-      <!---------------------------- Portifolio  ---------------------------->
-      <section class="portifolio" id="port">
-                
-        <div class="section__content container" style="padding-top: 0px;">
-          <h2 class="section__title section__title--white" style="font-size:4vw;">Portifólio</h2>
-      
-          <div class="port__cards">
-            <div class="port__card">
-              <img src="images/Calculadora de juros compostos Stone.png" alt="image of proyect" class="port__card-img">
-              <div class="port__card-info">
-                <h3 class="port__card-title" hidden></h3>
-                <p class="port__card-description" id="portCardDescription">
-                  
-                  <br>Calculadora de<BR>Juros Compostos - Stone<br><br>
-                    Nesse projeto, atualmente temos as funções de:<br><br>
+    <main class="relative z-10 pt-20">
+        
+        <!-- HERO SECTION -->
+        <section id="hero" class="min-h-[calc(100vh-80px)] flex items-center justify-center container mx-auto px-6 py-12">
+            <div class="flex flex-col-reverse md:flex-row items-center justify-between w-full gap-12">
+                <div class="md:w-1/2 space-y-6 text-center md:text-left">
+                    <div class="inline-block px-3 py-1 text-xs font-semibold tracking-wider text-primary uppercase bg-primary/10 rounded-full mb-2">
+                        Analista de Soluções & Especialista Técnico
+                    </div>
+                    <h1 class="text-4xl md:text-6xl font-bold leading-tight">
+                        Olá! 👋
+                        <br>
+                        Sou o Ygor
+                        <br>
+                        Híbrido entre <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-stone">Tech & Business</span>
+                    </h1>
+                    <p class="text-gray-600 dark:text-gray-400 text-lg max-w-lg mx-auto md:mx-0 leading-relaxed">
+                        Especialista em identificar gargalos operacionais e desenvolver soluções tecnológicas autónomas que otimizam resultados reais de negócio.
+                    </p>
                     
-                    - Botão para Calculo de Juros compostos pelas informações de Capital + Juros anual+ qtd de parcelas<br>
-                    - Botão para PrintScreen da tela para o Clipboar<br>
-                    - Botão para Limpar as informações<br>
-                    - Descrição do Capital, montante de Juros e Total Estimado à pagar<br>
-                    - Tabela contendo o calculo de juros compostos aplicada no mês melhor entendimento<br>
-                    <br>
-                    Projeto em JavaScript ainda em desenvolvimento para adições de futuras funções</p>
-                  </div>
+                    <div class="flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start pt-4">
+                        <a href="#exp" class="px-8 py-3 bg-primary hover:bg-sky-600 text-white font-semibold rounded-lg shadow-lg shadow-primary/30 transition-all transform hover:-translate-y-1">
+                            Ver Trajetória
+                        </a>
+                        <div class="flex items-center gap-4 px-4">
+                            <a href="https://github.com/YgorCRSoares" target="_blank" class="text-2xl hover:text-primary hover:scale-110 transition-transform"><i class="fa-brands fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/ygor-soares/" target="_blank" class="text-2xl hover:text-primary hover:scale-110 transition-transform"><i class="fa-brands fa-linkedin"></i></a>
+                        </div>
+                    </div>
                 </div>
-                <a href="https://stn-calc-jur-comp.vercel.app" target="_blank" style="color: rgb(169, 169, 255)">Link para acesso</a>
-          </div>
-        </div>
-      </section>
-      <!-- CONTACT -->
-      <section class="contact" id="contact">
-        <div class="contact__content container">
-
-          <div class="contact__socialmedia">
-            <h2>Me adiciona aí!</h2>
-            <p>Seja pra receber novas propostas, <br>dicas de como melhorar ou só pra bater um papo.<br> Minhas redes estão aqui em baixo, só me chamar! 😁.</p>
-            <div class="social-media social-media--contact">
-              <div class="social-media__icon">
-                <a href="https://www.instagram.com/ygor_cezar/"><i class="fa-brands fa-instagram"></i></a>
-              </div>
-              <div class="social-media__icon">
-                <a href="https://www.linkedin.com/in/ygor-soares"><i class="fa-brands fa-linkedin"></i></a>
-              </div>
-              <div class="social-media__icon">
-                <a href="https://github.com/YgorCRSoares"><i class="fa-brands fa-github"></i></a>
-              </div>
+                <div class="md:w-1/2 flex justify-center relative">
+                    <div class="relative w-64 h-64 md:w-96 md:h-96">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-primary to-stone rounded-full blur-2xl opacity-40 animate-pulse"></div>
+                        <div class="relative w-full h-full rounded-full border-4 border-white dark:border-slate-700 overflow-hidden shadow-2xl">
+                            <img src="/images/photo.webp" alt="Ygor Soares" class="w-full h-full object-cover">
+                        </div>
+                        
+                        <div class="absolute -bottom-4 -right-4 bg-white dark:bg-slate-800 p-4 rounded-xl shadow-xl flex items-center gap-3 animate-bounce" style="animation-duration: 3s;">
+                            <div class="bg-green-100 dark:bg-green-900 p-2 rounded-full text-green-600 dark:text-green-400">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-500">Nível Senior</p>
+                                <p class="text-sm font-bold">Especialista N4</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-      </section>
+        </section>
 
+        <!-- TOOLKIT TÉCNICO -->
+        <section id="competencias" class="py-24 bg-slate-50 dark:bg-slate-900/40">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold mb-4 text-gray-800 dark:text-white">Toolkit Técnico</h2>
+                    <p class="text-gray-500 dark:text-gray-400">Combinação de tecnologias para alta performance operacional</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <!-- Frontend -->
+                    <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-lg border border-gray-100 dark:border-slate-700 hover:-translate-y-2 transition-transform duration-300">
+                        <div class="w-14 h-14 bg-blue-100 dark:bg-blue-900/30 text-blue-500 rounded-xl flex items-center justify-center text-2xl mb-6"><i class="fa-solid fa-code"></i></div>
+                        <h3 class="text-xl font-bold mb-4">Frontend & Dev</h3>
+                        <ul class="space-y-3 text-sm text-gray-600 dark:text-gray-300">
+                            <li><i class="fas fa-check-circle text-primary mr-2"></i> JavaScript (ES6+) & TypeScript</li>
+                            <li><i class="fas fa-check-circle text-primary mr-2"></i> HTML5, CSS3, Bootstrap & Tailwind</li>
+                            <li><i class="fas fa-check-circle text-primary mr-2"></i> Python (Automação)</li>
+                            <li><i class="fas fa-check-circle text-primary mr-2"></i> jQuery & ApexCharts</li>
+                            <li><i class="fas fa-check-circle text-primary mr-2"></i> Git / GitHub</li>
+                        </ul>
+                    </div>
+                    <!-- Dados -->
+                    <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-lg border border-gray-100 dark:border-slate-700 hover:-translate-y-2 transition-transform duration-300">
+                        <div class="w-14 h-14 bg-stone/10 text-stone rounded-xl flex items-center justify-center text-2xl mb-6"><i class="fa-solid fa-chart-line"></i></div>
+                        <h3 class="text-xl font-bold mb-4">Dados & Analytics</h3>
+                        <ul class="space-y-3 text-sm text-gray-600 dark:text-gray-300">
+                            <li><i class="fas fa-check-circle text-stone mr-2"></i> Power BI & Looker Studio</li>
+                            <li><i class="fas fa-check-circle text-stone mr-2"></i> SQL / MYSQL</li>
+                            <li><i class="fas fa-check-circle text-stone mr-2"></i> Excel Avançado</li>
+                            <li><i class="fas fa-check-circle text-stone mr-2"></i> Dashboards Executivos</li>
+                        </ul>
+                    </div>
+                    <!-- Business -->
+                    <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-lg border border-gray-100 dark:border-slate-700 hover:-translate-y-2 transition-transform duration-300">
+                        <div class="w-14 h-14 bg-purple-100 dark:bg-purple-900/30 text-purple-500 rounded-xl flex items-center justify-center text-2xl mb-6"><i class="fa-solid fa-users"></i></div>
+                        <h3 class="text-xl font-bold mb-4">Business & CX</h3>
+                        <ul class="space-y-3 text-sm text-gray-600 dark:text-gray-300">
+                            <li><i class="fas fa-check-circle text-purple-500 mr-2"></i> Customer Experience</li>
+                            <li><i class="fas fa-check-circle text-purple-500 mr-2"></i> CRM (ActiveCampaign)</li>
+                            <li><i class="fas fa-check-circle text-purple-500 mr-2"></i> Estratégia de Retenção</li>
+                            <li><i class="fas fa-check-circle text-purple-500 mr-2"></i> Gestão de Crises N4</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PERFIL PROFISSIONAL -->
+        <section id="about" class="py-24">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col lg:flex-row items-stretch gap-12">
+                    <div class="lg:w-3/5 space-y-6">
+                        <div class="inline-block px-3 py-1 bg-primary/10 text-primary text-[10px] font-bold uppercase rounded-full tracking-wider">Resumo Profissional</div>
+                        <h2 class="text-3xl font-bold">Visão Híbrida em Tecnologia</h2>
+                        <div class="space-y-4 text-gray-600 dark:text-gray-300 leading-relaxed text-justify">
+                            <p>Profissional de Análise e Desenvolvimento de Sistemas com trajetória sólida em Customer Experience e Tecnologia. Atuo de forma híbrida, combinando excelência no relacionamento com o cliente e capacidade técnica de desenvolvimento.</p>
+                            <p>Especialista em identificar gargalos operacionais e desenvolver soluções tecnológicas autónomas que otimizam processos e resultados. Busco novos desafios onde possa aplicar minha visão analítica para resolver problemas reais do negócio.</p>
+                        </div>
+                    </div>
+                    <div class="lg:w-2/5 flex flex-col gap-6">
+                        <div class="p-8 bg-slate-100 dark:bg-slate-800 rounded-3xl border border-gray-200 dark:border-slate-700 shadow-inner flex-1">
+                            <h4 class="font-bold mb-4 flex items-center gap-2"><i class="fas fa-graduation-cap text-primary"></i> Formação Académica</h4>
+                            <div class="mb-6">
+                                <p class="text-sm font-bold">Análise e Desenvolvimento de Sistemas</p>
+                                <p class="text-xs text-gray-500">Estácio • Graduação</p>
+                            </div>
+                            <h4 class="font-bold mb-4 flex items-center gap-2"><i class="fas fa-certificate text-stone"></i> Certificações</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-white dark:bg-slate-700 text-[10px] font-bold rounded-lg border border-gray-200 dark:border-slate-600 shadow-sm">DevOps & Agile Culture</span>
+                                <span class="px-3 py-1 bg-white dark:bg-slate-700 text-[10px] font-bold rounded-lg border border-gray-200 dark:border-slate-600 shadow-sm">Power BI Express</span>
+                                <span class="px-3 py-1 bg-white dark:bg-slate-700 text-[10px] font-bold rounded-lg border border-gray-200 dark:border-slate-600 shadow-sm">JavaScript Avançado</span>
+                                <span class="px-3 py-1 bg-white dark:bg-slate-700 text-[10px] font-bold rounded-lg border border-gray-200 dark:border-slate-600 shadow-sm">Análise de Dados</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TRAJETÓRIA PROFISSIONAL -->
+        <section id="exp" class="py-24 bg-slate-50 dark:bg-slate-900/40">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold mb-4">Trajetória Profissional</h2>
+                    <p class="text-gray-500">A evolução da minha carreira e principais marcos profissionais</p>
+                </div>
+
+                <div class="max-w-4xl mx-auto relative">
+                    <!-- Timeline Line -->
+                    <div class="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-0.5 h-full bg-gray-200 dark:bg-slate-700"></div>
+
+                    <!-- Item 1: Stone -->
+                    <div class="relative mb-12 flex flex-col md:flex-row items-center group">
+                        <div class="hidden md:block w-1/2 pr-12 text-right">
+                            <span class="text-stone font-bold text-sm">2021 — Presente</span>
+                            <h3 class="text-xl font-bold text-gray-800 dark:text-white mt-1">Stone Co.</h3>
+                        </div>
+                        <div class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-stone border-4 border-white dark:border-slate-900 z-10 group-hover:scale-125 transition-transform"></div>
+                        <div class="w-full md:w-1/2 pl-12">
+                            <div class="md:hidden mb-1">
+                                <span class="text-stone font-bold text-xs uppercase tracking-widest">2021 — Presente</span>
+                                <h3 class="text-lg font-bold">Stone Co.</h3>
+                            </div>
+                            <!-- Card Stone com Imagem Corrigida -->
+                            <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-md border-l-4 border-stone relative overflow-hidden group/card min-h-[160px] flex flex-col justify-center">
+                                <!-- Camada da Imagem -->
+                                <div class="absolute inset-0 z-0 opacity-10 dark:opacity-20 pointer-events-none transition-opacity duration-300 group-hover/card:opacity-20">
+                                    <img src="/images/Stone.jpg" alt="Background Stone" class="w-full h-full object-cover filter blur-[3px]">
+                                </div>
+                                <!-- Conteúdo Principal -->
+                                <div class="relative z-10">
+                                    <h4 class="font-bold text-stone mb-2">Especialista Senior (N4)</h4>
+                                    <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-2 list-disc list-inside">
+                                        <li>Referência técnica para equipas em casos complexos de pós-venda e crédito.</li>
+                                        <li>Criação autónoma do ecossistema <strong>Sales Control</strong> e <strong>GerProp</strong>.</li>
+                                        <li>Promoções aceleradas até o nível de Especialista Sénior.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 2: Vincci -->
+                    <div class="relative mb-12 flex flex-col md:flex-row-reverse items-center group">
+                        <div class="hidden md:block w-1/2 pl-12 text-left">
+                            <span class="text-indigo-500 font-bold text-sm">2021 (Jul — Nov)</span>
+                            <h3 class="text-xl font-bold text-gray-800 dark:text-white mt-1">Vincci</h3>
+                        </div>
+                        <div class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-indigo-500 border-4 border-white dark:border-slate-900 z-10 group-hover:scale-125 transition-transform"></div>
+                        <div class="w-full md:w-1/2 pr-0 md:pr-12 pl-12 md:pl-0 text-left md:text-right">
+                            <div class="md:hidden mb-1 text-left">
+                                <span class="text-indigo-500 font-bold text-xs uppercase tracking-widest">2021 (Jul — Nov)</span>
+                                <h3 class="text-lg font-bold">Vincci</h3>
+                            </div>
+                            <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-md border-r-0 md:border-r-4 border-indigo-500 relative overflow-hidden group/card min-h-[160px] flex flex-col justify-center">
+                                <!-- Camada da Imagem -->
+                                <div class="absolute inset-0 z-0 opacity-10 dark:opacity-20 pointer-events-none transition-opacity duration-300 group-hover/card:opacity-20">
+                                    <img src="./images/Vincci.jpg" alt="Background Vincci" class="w-full h-full object-cover filter blur-[3px]">
+                                </div>
+                                <!-- Conteúdo Principal -->
+                                <div class="relative z-10">
+                                    <h4 class="font-bold text-indigo-300 mb-2">Planejamento Estratégico</h4>
+                                    <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-2 list-disc list-inside md:list-none">
+                                        <li>Análise de mailings e campanhas comerciais estratégicas.</li>
+                                        <li>Desenvolvimento de Dashboards executivos e suporte ao site.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 3: Master Brasil -->
+                    <div class="relative flex flex-col md:flex-row items-center group">
+                        <div class="hidden md:block w-1/2 pr-12 text-right">
+                            <span class="text-orange-500 font-bold text-sm">2013 — 2015</span>
+                            <h3 class="text-xl font-bold text-gray-800 dark:text-white mt-1 leading-tight">Master Brasil</h3>
+                        </div>
+                        <div class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-orange-500 border-4 border-white dark:border-slate-900 z-10 group-hover:scale-125 transition-transform"></div>
+                        <div class="w-full md:w-1/2 pl-12">
+                            <div class="md:hidden mb-1">
+                                <span class="text-orange-500 font-bold text-xs uppercase tracking-widest">2013 — 2015</span>
+                                <h3 class="text-lg font-bold">Master Brasil</h3>
+                            </div>
+                            <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-md border-l-4 border-orange-500 relative overflow-hidden group/card min-h-[160px] flex flex-col justify-center">
+                                <!-- Camada da Imagem -->
+                                <div class="absolute inset-0 z-0 opacity-10 dark:opacity-20 pointer-events-none transition-opacity duration-300 group-hover/card:opacity-20">
+                                    <img src="/images/MasterBrasil.jpg" alt="Background Master Brasil" class="w-full h-full object-cover filter blur-[3px]">
+                                </div>
+                                <!-- Conteúdo Principal -->
+                                <div class="relative z-10">
+                                    <h4 class="font-bold text-orange-500 mb-2">IT Help Desk & Control Desk</h4>
+                                    <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-2 list-disc list-inside">
+                                        <li>Desenvolvimento de aplicações em C# (Visual Basic) para produtividade.</li>
+                                        <li>Monitoramento de KPIs operacionais em tempo real.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJETOS DE INOVAÇÃO -->
+        <section id="port" class="py-24 bg-slate-900 text-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold mb-4">Projetos de Inovação</h2>
+                    <p class="text-slate-400">Soluções tecnológicas adotadas por grandes operações</p>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                    <div class="group bg-slate-800 rounded-3xl overflow-hidden border border-slate-700 hover:border-primary transition-all flex flex-col md:flex-row">
+                        <div class="md:w-1/3 bg-stone p-0 overflow-hidden relative flex items-center justify-center">
+                            <img src="/images/SalesControlPlataform.png" alt="Sales Control Platform UI" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <!-- Overlay com Botão de Expansão -->
+                            <button onclick="openModal('/images/SalesControlPlataform.png', 'Sales Control Platform')" class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-white gap-2 cursor-pointer">
+                                <div class="w-10 h-10 rounded-full bg-stone flex items-center justify-center shadow-lg transform scale-90 group-hover:scale-100 transition-transform">
+                                    <i class="fas fa-expand-alt text-lg"></i>
+                                </div>
+                                <span class="text-[10px] font-bold uppercase tracking-widest text-white">Expandir</span>
+                            </button>
+                        </div>
+                        <div class="p-8 flex-1">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-bold text-white text-white">Sales Control Platform</h3>
+                                <span class="text-[9px] font-bold text-stone bg-stone/10 px-2 py-1 rounded">WEB APP</span>
+                            </div>
+                            <p class="text-[10px] text-stone font-bold mb-4 uppercase tracking-tighter">TypeScript • Bootstrap • REST APIs</p>
+                            <p class="text-slate-300 text-sm mb-6 leading-relaxed">Ecossistema Web integral adotado pelas equipes da Stone. Hub centralizado com simuladores financeiros e indicadores em tempo real.</p>
+                        </div>
+                    </div>
+                    <div class="group bg-slate-800 rounded-3xl overflow-hidden border border-slate-700 hover:border-primary transition-all flex flex-col md:flex-row">
+                        <div class="md:w-1/3 bg-primary p-0 overflow-hidden relative flex items-center justify-center">
+                            <img src="/images/Gerador de Propostas.png" alt="GerProp UI" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <!-- Overlay com Botão de Expansão -->
+                            <button onclick="openModal('/images/Gerador de Propostas.png', 'GerProp - Gerador de Propostas')" class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-white gap-2 cursor-pointer">
+                                <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center shadow-lg transform scale-90 group-hover:scale-100 transition-transform">
+                                    <i class="fas fa-expand-alt text-lg"></i>
+                                </div>
+                                <span class="text-[10px] font-bold uppercase tracking-widest">Expandir</span>
+                            </button>
+                        </div>
+                        <div class="p-8 flex-1">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-bold text-white">Gerador de Propostas</h3>
+                                <span class="text-[9px] font-bold text-primary bg-primary/10 px-2 py-1 rounded">AUTOMAÇÃO</span>
+                            </div>
+                            <p class="text-[10px] text-primary font-bold mb-4 uppercase tracking-tighter">JS ES6+ • jsPDF • Tailwind CSS</p>
+                            <p class="text-slate-300 text-sm mb-6 leading-relaxed">Automação que calcula taxas complexas (CET) e gera propostas em PDF/Imagem instantaneamente.</p>
+                        </div>
+                    </div>
+                    <div class="group bg-slate-800 rounded-3xl overflow-hidden border border-slate-700 hover:border-primary transition-all flex flex-col md:flex-row">
+                        <div class="md:w-1/3 bg-green-600 p-0 overflow-hidden relative flex items-center justify-center min-h-[200px]">
+                            <img src="/images/CalculadoraAntecipacao.png" alt="Calculadora de Antecipação UI" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <button onclick="openModal('/images/CalculadoraAntecipacao.png', 'Calculadora de Antecipação de Recebíveis')" class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-white gap-2 cursor-pointer">
+                                <div class="w-10 h-10 rounded-full bg-green-500 flex items-center justify-center shadow-lg transform scale-90 group-hover:scale-100 transition-transform">
+                                    <i class="fas fa-expand-alt text-lg"></i>
+                                </div>
+                                <span class="text-[10px] font-bold uppercase tracking-widest text-white">Expandir</span>
+                            </button>
+                        </div>
+                        <div class="p-8 flex-1">
+                            <div class="flex justify-between items-start mb-2 text-white">
+                                <h3 class="text-xl font-bold">Calc. Antecipação</h3>
+                                <span class="text-[9px] font-bold text-green-400 bg-green-400/10 px-2 py-1 rounded text-white">BI & FINANÇAS</span>
+                            </div>
+                            <p class="text-[10px] text-green-400 font-bold mb-4 uppercase tracking-tighter text-white">JS Vanilla • Tailwind • html-to-image</p>
+                            <p class="text-slate-300 text-sm mb-4 leading-relaxed text-justify">
+                                Ferramenta interativa para simulação e comparação de taxas de antecipação entre Stone e concorrentes, calculando valor líquido e taxa efetiva em tempo real.
+                            </p>
+                            <div class="flex items-center gap-2 text-[10px] text-slate-500 italic">
+                                <i class="fas fa-check-circle"></i> Suporte até 12 parcelas e exportação de imagem.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="group bg-slate-800 rounded-3xl overflow-hidden border border-slate-700 hover:border-primary transition-all flex flex-col md:flex-row text-white">
+                        <div class="md:w-1/3 bg-slate-700 p-0 overflow-hidden relative flex items-center justify-center min-h-[200px]">
+                            <img src="/images/GeradorVAR.png" alt="Gerador de V.A.R UI" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <button onclick="openModal('/images/GeradorVAR.png', 'Gerador de V.A.R - Relatórios de Chat')" class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-white gap-2 cursor-pointer text-white">
+                                <div class="w-10 h-10 rounded-full bg-slate-500 flex items-center justify-center shadow-lg transform scale-90 group-hover:scale-100 transition-transform">
+                                    <i class="fas fa-expand-alt text-lg"></i>
+                                </div>
+                                <span class="text-[10px] font-bold uppercase tracking-widest text-white">Expandir</span>
+                            </button>
+                        </div>
+                        <div class="p-8 flex-1">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-bold text-white">Gerador de V.A.R</h3>
+                                <span class="text-[9px] font-bold text-slate-400 bg-slate-400/10 px-2 py-1 rounded">QUALIDADE & TREINAMENTO</span>
+                            </div>
+                            <p class="text-[10px] text-slate-400 font-bold mb-4 uppercase tracking-tighter">JS Vanilla • Sortable.js • jsPDF</p>
+                            <p class="text-slate-300 text-sm mb-4 leading-relaxed text-justify text-white">
+                                Ferramenta especializada para organizar e visualizar transcrições de atendimento. Converte textos em formatos visuais estruturados com edição inline e exportação para PDF.
+                            </p>
+                            <div class="flex items-center gap-2 text-[10px] text-slate-500 italic">
+                                <i class="fas fa-check-circle"></i> Reconhecimento automático de papéis e Drag & Drop.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="py-24 bg-white dark:bg-dark-bg border-t border-gray-100 dark:border-slate-800">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold mb-6">Vamos conectar?</h2>
+                <p class="text-gray-500 dark:text-gray-400 mb-12 max-w-lg mx-auto">Disponível para novos desafios onde eu possa aplicar minha visão analítica e técnica.</p>
+                <div class="flex flex-wrap justify-center gap-8">
+                    <a href="https://www.linkedin.com/in/ygor-soares" target="_blank" class="group flex flex-col items-center gap-2">
+                        <div class="w-16 h-16 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center text-2xl group-hover:bg-blue-600 group-hover:text-white group-hover:scale-110 transition-all shadow-lg shadow-blue-500/10"><i class="fa-brands fa-linkedin-in"></i></div>
+                        <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/YgorCRSoares" target="_blank" class="group flex flex-col items-center gap-2">
+                        <div class="w-16 h-16 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center text-2xl group-hover:bg-slate-900 group-hover:text-white dark:group-hover:bg-white dark:group-hover:text-black group-hover:scale-110 transition-all shadow-lg shadow-white/5"><i class="fa-brands fa-github"></i></div>
+                        <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">GitHub</span>
+                    </a>
+                    <a href="mailto:ygorcezarrico@hotmail.com" class="group flex flex-col items-center gap-2">
+                        <div class="w-16 h-16 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center text-2xl group-hover:bg-red-600 group-hover:text-white group-hover:scale-110 transition-all shadow-lg shadow-red-500/10"><i class="fas fa-envelope"></i></div>
+                        <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">E-mail</span>
+                    </a>
+                </div>
+                <p class="mt-16 text-[10px] uppercase tracking-widest text-gray-400 font-bold">ygorcezarrico@hotmail.com</p>
+            </div>
+        </section>
     </main>
 
-  <!--------------- FOOTER ----------------->
-  <footer class="footer container">
-    <p style="font-size: 12px; color:rgba(255, 255, 255, 0.25);">Developed with <a style="color: rgba(255, 0, 51, 0.35);">♥</a> by Dev Mode © & modifyed by Ygor Soares</p>
-  </footer>
+    <!-- Modal para Expansão de Imagem -->
+    <div id="image-modal" class="fixed inset-0 z-[100] hidden bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 md:p-10 cursor-zoom-out">
+        <div class="relative max-w-6xl w-full h-auto flex flex-col items-center animate-in fade-in zoom-in duration-300">
+            <button id="close-modal" class="absolute -top-12 right-0 text-white text-4xl hover:text-primary transition-colors cursor-pointer p-2">
+                <i class="fas fa-times"></i>
+            </button>
+            <img id="modal-img" src="" alt="Expanded View" class="max-w-full max-h-[85vh] rounded-xl shadow-2xl object-contain border border-slate-700">
+            <p id="modal-caption" class="text-white mt-6 font-bold text-lg tracking-wide uppercase"></p>
+        </div>
+    </div>
 
-  <!-- JS -->
-  <script src="js/main.js"></script>
+    <footer class="bg-slate-50 dark:bg-slate-950 py-8 border-t border-gray-100 dark:border-slate-900 text-center">
+        <p class="text-[10px] text-gray-400 dark:text-slate-600 font-bold tracking-[0.2em] uppercase">Ygor Soares Portfolio 2026 • Solutions & Senior Analytics</p>
+    </footer>
+
+    <script src="/script/script.js"></script>
 </body>
 </html>
