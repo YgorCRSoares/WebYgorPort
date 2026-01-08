@@ -1,19 +1,77 @@
-::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
-.dark ::-webkit-scrollbar-thumb { background: #334155; }
-::-webkit-scrollbar-thumb:hover { background: #0ea5e9; }
+@import "tailwindcss";
 
+/* 1. CONFIGURAÇÃO DE ARQUIVOS FONTE */
+/* Garante que o Tailwind leia seu HTML para gerar classes como 'hidden' */
+@source "../index.html"; 
+
+/* 2. ESTRATÉGIA DE MODO ESCURO */
+/* Força o Tailwind a funcionar com a classe .dark do seu JS */
+
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* 3. TIPOGRAFIA (CORREÇÃO DO ESPAÇAMENTO) */
+  /* Define Poppins como a fonte padrão 'font-sans' do Tailwind */
+  --font-sans: "Poppins", sans-serif;
+
+  /* 4. CORES PERSONALIZADAS */
+  --color-primary: #0ea5e9;
+  --color-stone: #00a14b;
+  
+  --color-light-bg: #f8fafc;
+  --color-light-text: #334155;
+  
+  --color-dark-bg: #0f172a;
+  --color-dark-text: #f8fafc;
+
+  /* 5. ANIMAÇÕES */
+  --animate-float: float 6s ease-in-out infinite;
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+}
+
+/* =========================================
+   ESTILOS GLOBAIS E MANUAIS
+   ========================================= */
+
+/* Scrollbar Principal */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #0ea5e9;
+}
+.dark ::-webkit-scrollbar-thumb {
+    background: #334155;
+}
+
+/* Efeito de Vidro (Glassmorphism) */
 .glass-nav {
-	background: rgba(255, 255, 255, 0.8);
-	backdrop-filter: blur(12px);
-	border-bottom: 1px solid rgba(0,0,0,0.05);
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 .dark .glass-nav {
-	background: rgba(15, 23, 42, 0.85);
-	border-bottom: 1px solid rgba(255,255,255,0.05);
+    background: rgba(15, 23, 42, 0.85);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.custom-scrollbar::-webkit-scrollbar { width: 4px; }
-.custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.1); }
-.dark .custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); }
+/* Scrollbar Customizada (para áreas menores se houver) */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.1);
+}
+.dark .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+}

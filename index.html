@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ygor Soares | Solutions Analyst & Senior Developer</title>
     
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="/css/stylesTw.css">
+    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,9 +16,7 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
+
 </head>
 <body class="bg-light-bg text-light-text dark:bg-dark-bg dark:text-dark-text transition-colors duration-500 overflow-x-hidden relative font-sans">
 
@@ -45,8 +46,8 @@
 
             <div class="flex items-center gap-4">
                 <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-slate-700 transition-colors" aria-label="Alternar Tema">
-                    <i class="fas fa-moon dark:hidden text-slate-700"></i>
-                    <i class="fas fa-sun hidden dark:block text-yellow-400"></i>
+                    <i class="fas fa-moon dark:!hidden text-slate-700"></i>
+                    <i class="fas fa-sun !hidden dark:!block text-yellow-400"></i>
                 </button>
                 <button id="mobile-menu-btn" class="md:hidden text-2xl focus:outline-none"><i class="fas fa-bars"></i></button>
             </div>
@@ -74,8 +75,8 @@
                     <div class="inline-block px-3 py-1 text-xs font-semibold tracking-wider text-primary uppercase bg-primary/10 rounded-full mb-2">
                         Analista de Soluções & Especialista Técnico
                     </div>
-                    <h1 class="text-4xl md:text-6xl font-bold leading-tight">
-                        Olá! 👋
+                    <h1 class="text-4xl md:text-6xl font-bold leading-tight" style="line-height: 3.7rem; padding-top: 2rem;">
+                        Olá!👋
                         <br>
                         Sou o Ygor
                         <br>
@@ -417,7 +418,6 @@
                         <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">E-mail</span>
                     </a>
                 </div>
-                <p class="mt-16 text-[10px] uppercase tracking-widest text-gray-400 font-bold">ygorcezarrico@hotmail.com</p>
             </div>
         </section>
     </main>

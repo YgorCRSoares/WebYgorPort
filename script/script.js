@@ -1,25 +1,3 @@
-tailwind.config = {
-    darkMode: 'class',
-    theme: {
-        extend: {
-            fontFamily: { sans: ['Poppins', 'sans-serif'] },
-            colors: {
-                primary: '#0ea5e9',
-                stone: '#00a14b',
-                dark: { bg: '#0f172a', card: '#1e293b', text: '#f8fafc' },
-                light: { bg: '#f8fafc', card: '#ffffff', text: '#334155' }
-            },
-            animation: { 'float': 'float 6s ease-in-out infinite' },
-            keyframes: {
-                float: {
-                    '0%, 100%': { transform: 'translateY(0)' },
-                    '50%': { transform: 'translateY(-20px)' },
-                }
-            }
-        }
-    }
-}
-
 // Lógica de Tema
 const themeToggleBtn = document.getElementById('theme-toggle');
 const htmlElement = document.documentElement;
